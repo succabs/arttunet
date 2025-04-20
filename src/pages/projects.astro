@@ -1,0 +1,55 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="Projects | Arttu Nikkilä" description="A few personal projects by Arttu Nikkilä" />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <h1>🧪 Selected Projects</h1>
+
+      <section>
+        <h2>Consent Analyser</h2>
+        <p>
+          Chrome Extension to check if CMP is connected to Shopify's Customer Privacy API and to see
+          dataLayer pushes.
+        </p>
+        <p>
+          No tool + code available publicly – email me to get a demo 🙂
+        </p>
+        <p><strong>Tech Stack:</strong> JavaScript, HTML, CSS</p>
+      </section>
+
+      <hr />
+
+      <section>
+        <h2>Kandi Rush Saga</h2>
+        <p>
+          A very serious game in which you have to get 180 student credits to graduate before running
+          out of allowance months. Beware of Plagiointisyytös and Moodlen käyttökatko.
+        </p>
+        <p><strong>Live:</strong> <a href="https://arttu.net/kandirushsaga">arttu.net/kandirushsaga</a></p>
+        <p><strong>Code:</strong> <a href="https://github.com/succabs/kandi-rush-saga">GitHub</a></p>
+        <p><strong>Tech Stack:</strong> JavaScript, Phaser</p>
+      </section>
+
+      <hr />
+
+      <section>
+        <h2>Jyväscape</h2>
+        <p>
+          City exploration webapp. Frontend with React + Mantine for UI, backend with ExpressJS,
+          database with PostgreSQL.
+        </p>
+        <p><strong>Tech Stack:</strong> React, Mantine, ExpressJS, PostgreSQL</p>
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>
