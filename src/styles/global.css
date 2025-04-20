@@ -1,12 +1,12 @@
 :root {
-  --bg: #c0dcc0;
-  --text: #000000;
-  --link: #0000ee;
-  --visited: #551a8b;
-  --hover: #ff0000;
-  --button-bg: #e0e0e0;
+  --bg: #005b63;
+  --text: #ffffff;
+  --link: #00a6ff;
+  --visited: #800080;
+  --hover: #ff3333;
+  --button-bg: #c0c0c0;
   --border: #808080;
-  --font-stack: 'Trebuchet MS', Verdana, sans-serif;
+  --font-stack: 'Trebuchet MS', 'Verdana', sans-serif;
 }
 
 html {
@@ -21,8 +21,17 @@ body {
   line-height: 1.6;
   margin: 0 auto;
   max-width: 800px;
-  padding: 2rem;
-  border: 3px double #999;
+  border: 3px ridge var(--border);
+}
+
+@media (min-width: 721px) {
+  body {
+    margin-top: 2rem;
+  }
+}
+
+main {
+  padding: 0 2rem;
 }
 
 a {
@@ -65,12 +74,29 @@ pre {
 }
 
 nav {
-  background-color: #a0c8a0;
-  padding: 1rem;
-  border: 2px inset var(--border);
+  background-color: #c0c0c0; /* Classic Win95 grey */
+  padding: 0.5rem 1rem;
+  border: 2px solid #ffffff;
+  border-right-color: #808080;
+  border-bottom-color: #808080;
+  border-left-color: #fff;
+  border-top-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: bold;
   margin-bottom: 2rem;
+  box-shadow: inset -1px -1px 0 #808080, inset 1px 1px 0 #fff;
 }
 
+header {
+  margin-top: 2rem;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+}
 nav a {
   margin-right: 1rem;
   text-decoration: none;
