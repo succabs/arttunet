@@ -5,6 +5,6 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://succabs.github.io',
+  site: 'https://arttu.net',
   integrations: [mdx(), sitemap()],
 });
