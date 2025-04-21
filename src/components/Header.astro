@@ -5,7 +5,19 @@ import { SITE_TITLE } from '../consts';
 
 <header>
   <nav>
-    <h2><a href="/">{SITE_TITLE}</a></h2>
+
+    <a class="logo-text" href="/"> 
+      <span class="l1">A</span>
+      <span class="l2">R</span>
+      <span class="l3">T</span>
+      <span class="l4">T</span>
+      <span class="l5">U</span>
+      <span class="dot">.</span>
+      <span class="domain">N</span>
+      <span class="domain">E</span>
+      <span class="domain">T</span>
+    </a>
+    
 
     <button class="hamburger" id="hamburger-btn" aria-label="Menu toggle">
       <img src="/hamburger.png" alt="Menu" />
@@ -33,16 +45,6 @@ import { SITE_TITLE } from '../consts';
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-  }
-
-  h2 {
-    margin: 0;
-    font-size: 1em;
-  }
-
-  h2 a,
-  h2 a.active {
-    text-decoration: none;
   }
 
   .internal-links {
@@ -79,6 +81,34 @@ import { SITE_TITLE } from '../consts';
       display: flex;
     }
   }
+
+  
+  .logo-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: var(--font-stack);
+  text-decoration: none;
+  display: flex;
+  gap: 0.05em;
+  align-items: center;
+}
+
+.logo-text span {
+  display: inline-block;
+}
+
+/* Subtle retro-inspired palette */
+.l1 { color: #ff3333; } /* red */
+.l2 { color: #00ff99; } /* greenish */
+.l3 { color: #00a6ff; } /* bright blue (matches your --link) */
+.l4 { color: #ffff66; } /* yellow */
+.l5 { color: #ff66cc; } /* pink */
+
+.dot { color: var(--border); }
+
+.domain {
+  color: #00a6ff; /* consistent blue for ".net" */
+}
 </style>
 
 <!-- Run the script on the client -->

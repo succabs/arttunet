@@ -48,7 +48,6 @@ a:hover {
 img {
   width: 100%;
   aspect-ratio: 16 / 9; /* or 16 / 9, or whatever ratio matches your image */
-  object-fit: cover;
   height: auto; /* optional, but keeps height flexible */
 }
 
