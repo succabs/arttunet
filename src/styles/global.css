@@ -31,7 +31,7 @@ body {
 }
 
 main {
-  padding: 0 2rem;
+  padding: 0 1rem;
 }
 
 a {
@@ -46,8 +46,10 @@ a:hover {
 }
 
 img {
-  max-width: 720px;
   width: 100%;
+  aspect-ratio: 16 / 9; /* or 16 / 9, or whatever ratio matches your image */
+  object-fit: cover;
+  height: auto; /* optional, but keeps height flexible */
 }
 
 h1,
@@ -100,4 +102,39 @@ footer {
 nav a {
   margin-right: 1rem;
   text-decoration: none;
+}
+
+figure {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+figure img {
+  width: 100%;
+  max-width: 720px;
+  height: auto;
+}
+
+figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--text);
+}
+
+.portrait {
+  float: right;
+  margin: 0 0 1rem 1rem;
+  max-width: 180px;
+  width: 180px;
+  height: 180px;
+}
+
+/* On smaller screens, disable float and center the image */
+@media (max-width: 720px) {
+  .portrait {
+    float: none;
+    display: block;
+    margin: 0 auto 1.5rem auto;
+  }
 }

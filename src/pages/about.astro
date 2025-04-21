@@ -1,28 +1,79 @@
 ---
-import Layout from '../layouts/BlogPost.astro';
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 ---
 
-<Layout
-  title="About Me"
-  description="More about Arttu Nikkilä – developer, analytics nerd, and magnet fisher"
-  pubDate={new Date('2024-04-20')}
-  heroImage="/blog-placeholder-about.jpg"
->
-  <p>
-    Hi, I'm Arttu Nikkilä — a web developer based in Finland with a passion for crafting beautiful websites and getting analytics data right.
-  </p>
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="About | Arttu Nikkilä" description="Who I am beyond code – hobbies, interests, photos and more." />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <h1>Who is he?</h1>
 
-  <p>
-    My work focuses on Shopify development, combining hands-on theme dev with integrations involving Liquid, JavaScript, React, GraphQL, and more. I specialize in bridging the gap between development and real-world business goals.
-  </p>
+      <p>
+        You can find all the work-related details on the other pages, so here’s something different — a peek into who I am outside of code. Also featuring a couple of rare photos from across the timeline of Arttu™.
+      </p>
+      
+      <h2>🎧 Hobbies & Interests</h2>
+      
+      <p>
+        I have a lot of hobbies. The latest is DJ'ing — I picked it up in March 2025, so I'm still learning, but it's a great way to get into flow and disconnect from daily noise. I'm slowly building a library focused on DnB and psytrance.
+      </p>
+      
+      <p>
+        During summer, I enjoy magnet fishing. It’s like a low-effort treasure hunt — surprisingly fun with friends on a sunny day.
+      </p>
+      
+      <p>
+        I love books, movies, and shows — mostly sci-fi, thrillers, and anime. I also play guitar, not as actively these days, but it's still there when the mood hits.
+      </p>
 
-  <p>
-    I'm also the go-to person for analytics setups: from GA4 to GTM, web pixels to Piwik, I make sure tracking works, no matter the platform or stack.
-  </p
-
-  <p>
-    Outside of tech, I like to balance things out. You'll often find me playing guitar, reading science fiction, or going magnet fishing (yes, that's a thing — and it's surprisingly addictive). I'm also into obscure rabbit holes, which means I probably know way too much about something totally useless.
-  </p>
-
-  <p>-Arttu</p>
-</Layout>
+      <p>I also do hiking, puzzles, jogging - you name it. It's hard to find time to do everything, but I enjoy a lot of things.</p>
+      
+      <figure>
+        <img src="/suomenlinna.jpg" alt="Me visiting Suomenlinna in 9th grade" />
+        <figcaption>A school trip to Suomenlinna in 9th grade.</figcaption>
+      </figure>
+      
+      <h2>🧠 Tech & Tinkering</h2>
+      
+      <p>
+        I started coding young — back when table layouts ruled the web and websites had flashing marquee tags. My first sites were in pure HTML & CSS, and I made simple games with CoolBasic. I'm kind of sad that none of these survived the time and
+        are now all gone.
+      </p>
+      
+      <p>
+        I'm fascinated by the history of tech. Why did VHS beat Betamax? What caused the downfall of Symbian? These stories are like little windows into how people and systems work — and either succeed or fail.
+      </p>
+      
+      <p>
+        I’ve used different OS's, run a home Linux server, and started way too many side projects I never finished. They are mostly based on a humorous idea and when the idea is not fun anymore, the project gets shelved.
+      </p>
+      
+      <figure>
+        <img src="/first_phone.jpg" alt="Baby Arttu using his first phone" />
+        <figcaption>I’ve liked technology since I was born. Here's me and my first mobile phone. A perfect Christmas gift.</figcaption>
+      </figure>
+      
+      <h2>🧭 What I Value</h2>
+      
+      <p>
+        I believe in curiosity, weird ideas, and learning by doing. I enjoy figuring out how things work — not just in tech, but in people, systems, and stories.
+      </p>
+      
+      <p>
+        I like people who are genuinely into things — whether it’s tech, insects, jazz, or potato taxonomy. Passion is cool, whatever form it takes.
+      </p>
+      
+      <p>
+        If you resonate with any of this, you might like my blog.
+      </p>
+      
+    </main>
+    <Footer />
+  </body>
+</html>

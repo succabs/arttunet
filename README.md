@@ -1,68 +1,118 @@
-# Astro Starter Kit: Blog
+# Arttu.net – Portfolio Website
 
-```sh
-npm create astro@latest -- --template blog
+Welcome to the source code for my personal website: **[arttu.net](https://arttu.net)**  
+This site serves as my online portfolio, showcasing my work, skills, and a bit of who I am outside of code.
+
+---
+
+## 🎨 Design
+
+The design is intentionally minimal and a bit nostalgic — styled with raw CSS (no frameworks), using a palette and layout inspired by early 2000s personal sites but modernized with semantic HTML and responsive design.
+
+### Key design principles
+
+- **Readable, accessible, fast**
+- **Responsive layout** with a centered column (`max-width: 800px`)
+- **Personal touches** like a marquee banner, emoji navigation hints, and fun facts
+- Custom styling without Tailwind or component frameworks — all styles are handcrafted
+
+---
+
+## 🌍 Live Site
+
+The site is hosted on **GitHub Pages** and available here:
+
+👉 **[https://arttu.net](https://arttu.net)**
+
+DNS is managed via [Porkbun](https://porkbun.com), and the site is deployed from the `master` branch of this repo using GitHub's automatic Pages integration.
+
+---
+
+## 🚀 Running the Project Locally
+
+This project is built with [Astro](https://astro.build/).
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (v18+ recommended)
+- [npm](https://www.npmjs.com/) or [pnpm](https://pnpm.io/)
+
+### Install dependencies
+
+```bash
+npm install
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/blog)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/blog)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/blog/devcontainer.json)
+### Run the dev server
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+```bash
+npm run dev
+```
 
-![blog](https://github.com/withastro/astro/assets/2244813/ff10799f-a816-4703-b967-c78997e8323d)
+Visit `http://localhost:4321` in your browser to view the site locally.
 
-Features:
+---
 
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and OpenGraph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
+## 🛠️ Build for Production
 
-## 🚀 Project Structure
+```bash
+npm run build
+```
 
-Inside of your Astro project, you'll see the following folders and files:
+The built site will be output to the `dist/` folder.
 
-```text
-├── public/
+To preview the built version locally:
+
+```bash
+npm run preview
+```
+
+---
+
+## 📦 Deploying to GitHub Pages
+
+This project uses the official `@astrojs/github` adapter for GitHub Pages.
+
+If needed, you can deploy manually using the following:
+
+```bash
+npm run build
+npx gh-pages -d dist
+```
+
+Or let GitHub Actions do it automatically when pushing to `main`.
+
+Make sure the `astro.config.mjs` file has:
+
+```js
+import { defineConfig } from 'astro/config';
+import github from '@astrojs/github';
+
+export default defineConfig({
+  adapter: github(),
+  base: '/',
+});
+```
+
+---
+
+## 📁 Project Structure
+
+```
+├── public/             # Static assets (images, favicon, etc.)
 ├── src/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
-├── astro.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
+│   ├── components/     # Astro components (Header, Footer, etc.)
+│   ├── layouts/        # Shared layout wrappers
+│   ├── pages/          # Individual routes (/index.astro, /about.astro, etc.)
+│   ├── media/          # Static imports like project screenshots or profile images
+├── astro.config.mjs    # Astro project config
+├── package.json        # Project metadata and scripts
+└── README.md           # This file
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+---
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## 📬 Contact
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-
-## Credit
-
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+- Email: [artnikkila@gmail.com](mailto:artnikkila@gmail.com)
+- GitHub: [github.com/succabs](https://github.com/succabs)

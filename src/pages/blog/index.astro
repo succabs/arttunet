@@ -45,7 +45,6 @@ ul li:first-child .title {
 }
 ul li img {
   margin-bottom: 0.5rem;
-  border-radius: 12px;
 }
 ul li a {
   display: block;
@@ -93,7 +92,7 @@ ul a:hover img {
 						posts.map((post) => (
 							<li>
 								<a href={`/blog/${post.id}/`}>
-									<img width={720} height={360} src={post.data.heroImage} alt="" />
+									<img src={post.data.heroImage} alt="" />
 									<h4 class="title">{post.data.title}</h4>
 									<p class="date">
 										<FormattedDate date={post.data.pubDate} />
