@@ -75,5 +75,36 @@ import Footer from '../components/Footer.astro';
       
     </main>
     <Footer />
+    <script>
+      const pages = ['home', 'experience', 'projects', 'skills', 'about', 'blog'];
+      const visitedPages = JSON.parse(localStorage.getItem('visitedPages') || '{}');
+    
+      // Mark current page as visited based on the referrer
+      const currentPath = window.location.pathname.replace('/', '') || 'home';
+      if (pages.includes(currentPath)) {
+        visitedPages[currentPath] = true;
+        localStorage.setItem('visitedPages', JSON.stringify(visitedPages));
+      }
+    
+      // Mark visited pages in the list
+      const listItems = document.querySelectorAll('#quest-list li');
+      listItems.forEach((item) => {
+    const el = item as HTMLElement;
+    const page = el.dataset.page;
+    if (page && visitedPages[page]) {
+      el.style.textDecoration = 'line-through';
+    }
+  });
+  
+    
+      // Show reward if all pages are visited
+      const allVisited = pages.every((p) => visitedPages[p]);
+      if (allVisited) {
+          const rewardEl = document.getElementById('reward');
+  if (allVisited && rewardEl) {
+    rewardEl.style.display = 'block';
+  }
+      }
+    </script>
   </body>
 </html>

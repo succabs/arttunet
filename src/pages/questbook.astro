@@ -1,0 +1,71 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="Questbook | Arttu Nikkilä" description="Questbook." />
+  </head>
+  <body>
+    <Header />
+    <main>
+        <h1>🗡️ Questbook</h1>
+        <p>Greetings, traveler. A quest lies before you: visit every page in this humble realm — and return here. A reward awaits the curious and persistent.</p>
+      
+        <ul id="quest-list">
+          <li data-page="home">🏠 Home</li>
+          <li data-page="experience">🧠 Experience</li>
+          <li data-page="projects">🛠️ Projects</li>
+          <li data-page="skills">📚 Skills</li>
+          <li data-page="about">👤 About me</li>
+          <li data-page="blog">📝 Blog</li>
+        </ul>
+      
+        <div id="reward" style="display: none; margin-top: 2rem;">
+          <h2>🎉 Quest Complete!</h2>
+          <p>You have explored all corners of this site. Here is your reward:</p>
+          <a href="/thank-you.txt" download><button>Download Your Reward</button></a>
+          <p>(Plot twist: It is a short thank you letter from me.)</p>
+        </div>
+      
+        <hr />
+        <p>Were you looking for the guestbook instead? You can find it <a href="/guestbook">here</a>.</p>
+      </main>
+      
+    <Footer />
+    <script>
+        const pages = ['home', 'experience', 'projects', 'skills', 'about', 'blog'];
+        const visitedPages = JSON.parse(localStorage.getItem('visitedPages') || '{}');
+      
+        // Mark current page as visited based on the referrer
+        const currentPath = window.location.pathname.replace('/', '') || 'home';
+        if (pages.includes(currentPath)) {
+          visitedPages[currentPath] = true;
+          localStorage.setItem('visitedPages', JSON.stringify(visitedPages));
+        }
+      
+        // Mark visited pages in the list
+        const listItems = document.querySelectorAll('#quest-list li');
+        listItems.forEach((item) => {
+      const el = item as HTMLElement;
+      const page = el.dataset.page;
+      if (page && visitedPages[page]) {
+        el.style.textDecoration = 'line-through';
+      }
+    });
+    
+      
+        // Show reward if all pages are visited
+        const allVisited = pages.every((p) => visitedPages[p]);
+        if (allVisited) {
+            const rewardEl = document.getElementById('reward');
+    if (allVisited && rewardEl) {
+      rewardEl.style.display = 'block';
+    }
+        }
+      </script>
+  </body>
+</html>
